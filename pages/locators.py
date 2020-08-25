@@ -4,7 +4,6 @@ class MainPageLocators():
     LOGIN_LINK = (By.CSS_SELECTOR, "#login_link")
 
 class LoginPageLocators():
-    PAGE_URL = ""
     LOGIN_FORM = (By.CSS_SELECTOR, "#login_form")
     REGISTRATION_FORM = (By.CSS_SELECTOR, "#register_form")
     REGISTRATION_FORM_EMAIL = (By.CSS_SELECTOR, "[name='registration-email']")
