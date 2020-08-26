@@ -19,3 +19,5 @@ class ProductPageLocators:
     ADD_TO_BASKET_BUTTON = (By.CSS_SELECTOR, ".btn-add-to-basket")
     ADDED_TO_BASKET_ALERT = (By.CSS_SELECTOR, ".alert:first-child .alertinner ")
     BASKET_IN_RIGHT_CORNER = (By.CSS_SELECTOR, ".basket-mini")
+    PRODUCT_MAIN_PRISE = (By.CSS_SELECTOR, ".product_main .price_color")
+    PRODUCT_MAIN_NAME = (By.CSS_SELECTOR, ".product_main h1")
