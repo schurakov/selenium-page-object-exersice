@@ -11,14 +11,11 @@ class ProductPage(BasePage):
         expected_price = self.get_product_price()
         price_in_basket = self.browser.find_element(*ProductPageLocators.BASKET_IN_RIGHT_CORNER)
         assert expected_price in price_in_basket.text, "Unexpected price in basket"
-        print(expected_price, '\n', price_in_basket.text)
 
     def should_be_correct_add_to_basket_notification(self):
         expected_notification = self.get_product_name() + " has been added to your basket."
         notification = self.browser.find_element(*ProductPageLocators.ADDED_TO_BASKET_ALERT)
-        print(expected_notification, '\n', notification.text)
         assert expected_notification == notification.text, "Unexpected product name in add to basket notification"
-
 
     def get_product_price(self):
         product_price = self.browser.find_element(*ProductPageLocators.PRODUCT_MAIN_PRISE)
