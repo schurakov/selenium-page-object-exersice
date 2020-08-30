@@ -2,7 +2,6 @@ from pages.product_page import ProductPage
 import pytest
 
 
-@pytest.mark.skip
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer0",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer1",
                                   "http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/?promo=offer2",
@@ -24,6 +23,7 @@ def test_guest_can_add_product_to_basket(browser, link):
     page.should_be_correct_price_in_basket()
     page.should_be_correct_add_to_basket_notification()
 
+@pytest.mark.xfail
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"])
 def test_guest_cant_see_success_message_after_adding_product_to_basket(browser, link):
     page = ProductPage(browser, link)
@@ -37,6 +37,7 @@ def test_guest_cant_see_success_message(browser, link):
     page.open()
     page.should_not_be_success_message()
 
+@pytest.mark.xfail
 @pytest.mark.parametrize('link', ["http://selenium1py.pythonanywhere.com/catalogue/coders-at-work_207/"])
 def test_message_disappeared_after_adding_product_to_basket(browser, link):
     page = ProductPage(browser, link)
