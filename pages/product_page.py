@@ -9,7 +9,7 @@ class ProductPage(BasePage):
 
     def should_be_correct_price_in_basket(self):
         expected_price = self.get_product_price()
-        price_in_basket = self.browser.find_element(*ProductPageLocators.BASKET_IN_RIGHT_CORNER)
+        price_in_basket = self.browser.find_element(*ProductPageLocators.BASKET_BLOCK_IN_RIGHT_CORNER)
         assert expected_price in price_in_basket.text, "Unexpected price in basket"
 
     def should_be_correct_add_to_basket_notification(self):
